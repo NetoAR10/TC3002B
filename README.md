@@ -2,6 +2,7 @@
 ## Avance 1: Generación o selección del set de datos  y preprocesado
 
 Dataset utilizado: Smartphone Usage and Addiction Analysis Dataset
+
 Link a dataset: https://www.kaggle.com/datasets/zahranusratt/smartphone-usage-and-addiction-analysis-dataset/data
 
 ### Descripción
@@ -25,6 +26,7 @@ También se generó una matriz de correlación para visualizar cque variables ti
 
 <img width="1346" height="1227" alt="image" src="https://github.com/user-attachments/assets/0dead493-9773-470d-9c2f-1e6e42693aac" />
 
+**Al final terminamos con 20 variables y una variable predictora.**
 
 ### Separación de los datos
 
