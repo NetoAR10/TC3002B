@@ -43,8 +43,12 @@ Se tómo la decisión de separa el dataset de esta forma ya que se quiere dar un
 Se eliminó la columna "addiction_level" ya que hacía que el modelo aprendiera a la perfección en train, validation y test
 
 ### Descripción
-Se utilizó un modelo red neuronal feedforward (MLP) para clasificación binaria con las siguientes capas:
+Se utilizó un modelo red neuronal feedforward (FNN) para clasificación binaria con las siguientes capas:
 <img width="738" height="174" alt="image" src="https://github.com/user-attachments/assets/8ca5a72e-b4c5-4715-9cff-4f5d50757fc7" />
+
+La selección de este modelo se tomó usando de referencia como se muestra en [1] donde se usa una Feedforward Neural Network (FNN) para el análisis de la adicción de las personas con el internet. En esta investigación también se usan múltiples modelos de machine learning, como Random Forest y XGBoost, y según los resultados la red neuronal fué la que dió los mejores resultados.
+
+La clasificación real del modelo utilizado es un Multilayer Perceptron (MLP) debido a que se usan 3 capas densas: una capa de entrada, una capa oculta y una capa de salida.
 
 La primera capa Dense(16) aprende patrones básicos, la siguiente capa Dense(8) combina los patrones en en relaciones más complejas y la capa Dense(1) da la predicción final.
 
@@ -54,6 +58,8 @@ La primera capa Dense(16) aprende patrones básicos, la siguiente capa Dense(8) 
 * Métrica = Accuracy --> Métrica de monitoreo que no afecta el entrenamiento pero muestra si hay overfitting comparando con el accuracy de validation
 
 ### Métricas de evaluación del modelo
+Las métricas que se usaron para evaluar los modelos de clasificación referenciados en [1], son Accuracy, Precision, Recall, F1-Score y AUC-ROC. Para la evaluación del modelo vamos a usar accuracy sólo para validar que no haya overfitting al comparar el accuracy de train, validation y test. Las métricas de precision, recall y f1-score son las métricas que se utilizarán para la evaluación final del desempeño del modelo.
+
 * Precision = Indica que tan confiables son los positivos de una clase
 * Recall = Indica que tantos casos detecta en una clase
 * F1-score = Balance entre precision y recall
@@ -77,4 +83,9 @@ Con estas métricas podemos tener un análisis mas exacto del rendimiento del mo
 
 * El modelo no muestra señales de overfitting ya que el accuracy de train, validation y test es muy similar
 * El modelo tiene un buen desempeño inicial al tener un f1-score de 0.81 para la clase 0 (no adicción) y un f1-score de 0.92 para la clase 1 (adicción)
-* Hay un desbalance de clases entonces la clase 0 tiene potencial de mejorar su rendimiento 
+* Hay un desbalance de clases entonces la clase 0 tiene potencial de mejorar su rendimiento
+
+
+## Referencias
+
+[1] Wahed, S. A., & Wahed, M. A. (2025). AI-Driven Digital Well-being: Developing Machine Learning Model to Predict and Mitigate Internet Addiction. LatIA, 3, 134. https://doi.org/10.62486/latia2025134
