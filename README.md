@@ -85,7 +85,37 @@ Con estas métricas podemos tener un análisis mas exacto del rendimiento del mo
 * El modelo tiene un buen desempeño inicial al tener un f1-score de 0.81 para la clase 0 (no adicción) y un f1-score de 0.92 para la clase 1 (adicción)
 * Hay un desbalance de clases entonces la clase 0 tiene potencial de mejorar su rendimiento
 
+## Avance 3: Refinamiento del modelo
+
+Para mejorar el rendimiento del modelo, se trató aplicar diferentes ideas: cambiar el número de neuronas en cada capa, agregar capas densas, ajustar las funciones de activación en vez de usar ReLu, etc. Ninguna de estas ideas terminaron dando mejor rendimiento que el modelo original, en el mejor de los casos se conseguían resultados similares pero con variaciones en el recall de alguna clase. La mejora que se terminó aplicando que realmente dió mejores resultados fue el escalado de los datos númericos para el dataset de train.
+
+El escalador o "scaler" en un proceso que transforma las variables númericas a una escala comparable. Es escalador utilizado fué StandarScaler y la manera en la que realiza el escalado de los datos es restando la media de cada variable y dividiéndola entre su desviación estándar de modo que cada característica tenga media de 0 y varianza de 1 [2]. Esto es para evitar que las variables con número grandes tengan más impacto en el modelo y permite que el aprendizaje sea más adecuado y eficiente.
+
+### Resultados con refinamiento
+
+===== Resultados de la última época de entrenamiento del modelo =====
+<img width="1127" height="48" alt="image" src="https://github.com/user-attachments/assets/f1a63f5a-3ea3-41d2-a075-e43a6e241886" />
+
+
+
+===== Accuracy de test =====
+<img width="354" height="23" alt="image" src="https://github.com/user-attachments/assets/24648c94-b811-4b1f-94ca-a379e497bf67" />
+
+
+
+===== Métricas de evaluación =====
+<img width="538" height="402" alt="image" src="https://github.com/user-attachments/assets/731870e4-c71b-420a-a311-c0d1022f5ea5" />
+
+
+### Conclusiones
+
+* El modelo sigue sin mostrar señales de overfitting ya que el accuracy de train, validation y test es muy similar
+* Los falsos negativos y los falsos positivos fueron reducidos considerablemente entonces esto nos da un aumento aproximeado de 0.13 puntos en precision, 0.03 en recall y 0.08 en f1-score para la clase 0. También hubo aumento en la clase 1 pero los cambios fueron mínimos ya que las puntuaciones ya eran altas para empezar, aumentó 0.02 en precision, 0.07 en recall y 0.06 en f1-score.
+* El modelo está más balanceado y es sumamente precisio para predecir si una persona esta adicta a su celular. 
+
+
 
 ## Referencias
 
 [1] Wahed, S. A., & Wahed, M. A. (2025). AI-Driven Digital Well-being: Developing Machine Learning Model to Predict and Mitigate Internet Addiction. LatIA, 3, 134. https://doi.org/10.62486/latia2025134
+[2] StandardScaler. (s. f.). Scikit-learn. https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html
