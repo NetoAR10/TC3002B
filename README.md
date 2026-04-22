@@ -117,5 +117,5 @@ El escalador o "scaler" en un proceso que transforma las variables númericas a 
 
 ## Referencias
 
-[1] Wahed, S. A., & Wahed, M. A. (2025). AI-Driven Digital Well-being: Developing Machine Learning Model to Predict and Mitigate Internet Addiction. LatIA, 3, 134. https://doi.org/10.62486/latia2025134
-[2] StandardScaler. (s. f.). Scikit-learn. https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html
+* [1] Wahed, S. A., & Wahed, M. A. (2025). AI-Driven Digital Well-being: Developing Machine Learning Model to Predict and Mitigate Internet Addiction. LatIA, 3, 134. https://doi.org/10.62486/latia2025134
+* [2] StandardScaler. (s. f.). Scikit-learn. https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html
